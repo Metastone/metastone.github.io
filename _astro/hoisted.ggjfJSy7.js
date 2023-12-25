@@ -1,1 +1,0 @@
-class s extends HTMLElement{constructor(){super();const n=this.dataset.newfrurl,t=this.dataset.newenurl;document.getElementById("language-selector").addEventListener("change",function(){var e=this.options[this.selectedIndex];e.value==="fr"?window.location.href=n:e.value==="en"&&(window.location.href=t)}),console.log("after")}}customElements.define("langage-selector",s);
