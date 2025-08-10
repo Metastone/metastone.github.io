@@ -97,20 +97,27 @@
       padding: 5px;
     }
   </style>
+  <script type="module">
+    document
+      .getElementById("return-button")
+      .addEventListener("click", function () {
+        window.history.back();
+      });
+  </script>
   <body>
     <div class="banner">
       <div class="banner-titles">
         <h2 class="banner-title">
-          <a class="invisible-link" href="/fr/">Metastro</a>
+          <a class="invisible-link" href="/en/">Metastro</a>
         </h2>
       </div>
       <select class="language-selector" id="language-selector">
-        <option value="en">English</option>
-        <option value="fr" selected="selected">Français</option>
+        <option value="en" selected="selected">English</option>
+        <option value="fr">Français</option>
       </select>
       <langage-selector
-        data-newenurl="/en/tags/2025/"
-        data-newfrurl="/fr/tags/2025/"
+        data-newenurl="/en/pictures/2025-08-08_ngc6888_nebuleuse_du_croissant/"
+        data-newfrurl="/fr/pictures/2025-08-08_ngc6888_nebuleuse_du_croissant/"
       ></langage-selector>
       <script type="module">
         class LangageSelector extends HTMLElement {
@@ -137,32 +144,44 @@
       </script>
     </div>
     <div class="content">
-      <a href="/fr/pictures/2025-08-08_ngc6888_nebuleuse_du_croissant/">
-        <img
-          class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1ZoZD1z0IRkVCndSRaiZ5QLCR1NL3IBws"
-        /> </a
-      ><a href="/fr/pictures/2025-08-05_ic5146_nebuleuse_du_cocon/">
-        <img
-          class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=15ntDcw0fNUlB_jlbsamqh3gJEvYz9uST"
-        /> </a
-      ><a href="/fr/pictures/2025-01-15_mars/">
-        <img
-          class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1F2ipZY3y65EK3lI-1e8sGdZRHQZGgBOQ"
-        /> </a
-      ><a href="/fr/pictures/2025-01-12_mars_gif/">
-        <img
-          class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1TjRiLhf0_DgifVTv0x62wWakILMay-6P"
-        /> </a
-      ><a href="/fr/pictures/2025-01-01_mars_21h52/">
-        <img
-          class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=15Ezdl52UX7Sh5MxslbYZr_Ql_LSp0UdM"
-        />
+      <button class="custom-button" id="return-button">Return</button>
+      <a
+        href="https://lh3.googleusercontent.com/d/1ZoZD1z0IRkVCndSRaiZ5QLCR1NL3IBws"
+      >
+        <button class="custom-button" id="full-size-button">Full size</button>
       </a>
+      <div class="image-container">
+        <img
+          crossorigin="anonymous"
+          class="fullSizeImage"
+          src="https://lh3.googleusercontent.com/d/1ZoZD1z0IRkVCndSRaiZ5QLCR1NL3IBws"
+        />
+      </div>
+      <table class="borderless-table">
+        <tr>
+          <td>Acquisition date</td>
+          <td id="acquisition-date">Aug 8, 2025</td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td id="description">
+            Crescent nebula (NGC-6888). Color camera ZWO ASI183MC. 47x300s
+            exposures (3h55). Captured in Chaynat, Auvergne region, France. No
+            clouds, nebula at the zenith, but the moon was almost full
+          </td>
+        </tr>
+        <tr>
+          <td>Tags</td>
+          <td>
+            <a href="/en/tags/deep-sky/">deep-sky</a>
+            &nbsp;
+            <a href="/en/tags/nebula/">nebula</a>
+            &nbsp;
+            <a href="/en/tags/ngc6888/">ngc6888</a>
+            &nbsp;
+          </td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
