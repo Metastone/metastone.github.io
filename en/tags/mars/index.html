@@ -1,24 +1,253 @@
-<!DOCTYPE html><html> <style>:root{--primary-color: #3e8eae;--secondary-color: #ffcc00;--text-color: #fff;--background-color: rgb(20, 20, 30);--banner-background-color: rgb(40, 40, 50)}.banner{position:fixed;top:0;left:0;width:100%;height:60px;background-color:var(--banner-background-color);display:flex;justify-content:space-between;align-items:center}.banner-titles{flex-grow:1;text-align:center}.banner-title{color:orange;margin-top:5px;margin-bottom:5px}.banner-subtitle{margin-top:5px}.language-selector{margin-right:10px;appearance:none;-webkit-appearance:none;-moz-appearance:none;background-color:var(--banner-background-color);color:#fff;padding:10px;border:1px solid #555;border-radius:5px}.content{margin-top:70px}body{color:#969696;background-color:var(--background-color)}.thumbnail{cursor:pointer}.custom-button{background-color:#333;color:#eee;border:none;padding:10px 20px;font-size:14px;border-radius:5px;cursor:pointer;transition:background-color .3s ease;margin-right:10px;margin-bottom:10px}.custom-button:hover{background-color:#555}.invisible-link{color:inherit;text-decoration:none}.image-container{max-width:100%;height:100vh;display:flex;justify-content:center;align-items:center}.image-container img{max-width:90%;max-height:100%}.close-button{position:absolute;top:10px;right:10px;cursor:pointer;color:#fff}.borderless-table{border-collapse:collapse}.borderless-table td{border:none;padding:5px}
-</style><body> <div class="banner"> <div class="banner-titles"> <h2 class="banner-title"> <a class="invisible-link" href="/en/">Metastro</a> </h2> </div> <select class="language-selector" id="language-selector"> <option value="en" selected="selected">English</option> <option value="fr">Français</option> </select> <langage-selector data-newenurl="/en/tags/mars/" data-newfrurl="/fr/tags/mars/"></langage-selector> <script type="module">
-    class LangageSelector extends HTMLElement {
-      constructor() {
-        super();
-        const newFrUrl = this.dataset.newfrurl;
-        const newEnUrl = this.dataset.newenurl;
-
-        document
-          .getElementById("language-selector")
-          .addEventListener("change", function () {
-            var selectedOption = this.options[this.selectedIndex];
-            if (selectedOption.value === "fr") {
-              window.location.href = newFrUrl;
-            } else if (selectedOption.value === "en") {
-              window.location.href = newEnUrl;
-            }
-          });
-        console.log("after");
-      }
+<!doctype html>
+<html>
+  <style>
+    :root {
+      --primary-color: #3e8eae;
+      --secondary-color: #ffcc00;
+      --text-color: #fff;
+      --background-color: rgb(20, 20, 30);
+      --banner-background-color: rgb(40, 40, 50);
     }
+    .banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background-color: var(--banner-background-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .banner-titles {
+      flex-grow: 1;
+      text-align: center;
+    }
+    .banner-title {
+      color: orange;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    .banner-subtitle {
+      margin-top: 5px;
+    }
+    .language-selector {
+      margin-right: 10px;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: var(--banner-background-color);
+      color: #fff;
+      padding: 10px;
+      border: 1px solid #555;
+      border-radius: 5px;
+    }
+    .content {
+      margin-top: 70px;
+    }
+    body {
+      color: #969696;
+      background-color: var(--background-color);
+    }
+    .thumbnail {
+      cursor: pointer;
+    }
+    .custom-button {
+      background-color: #333;
+      color: #eee;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    .custom-button:hover {
+      background-color: #555;
+    }
+    .invisible-link {
+      color: inherit;
+      text-decoration: none;
+    }
+    .image-container {
+      max-width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .image-container img {
+      max-width: 90%;
+      max-height: 100%;
+    }
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: #fff;
+    }
+    .borderless-table {
+      border-collapse: collapse;
+    }
+    .borderless-table td {
+      border: none;
+      padding: 5px;
+    }
+  </style>
+  <body>
+    <div class="banner">
+      <div class="banner-titles">
+        <h2 class="banner-title">
+          <a class="invisible-link" href="/en/">Metastro</a>
+        </h2>
+      </div>
+      <select class="language-selector" id="language-selector">
+        <option value="en" selected="selected">English</option>
+        <option value="fr">Français</option>
+      </select>
+      <langage-selector
+        data-newenurl="/en/tags/mars/"
+        data-newfrurl="/fr/tags/mars/"
+      ></langage-selector>
+      <script type="module">
+        class LangageSelector extends HTMLElement {
+          constructor() {
+            super();
+            const newFrUrl = this.dataset.newfrurl;
+            const newEnUrl = this.dataset.newenurl;
 
-    customElements.define("langage-selector", LangageSelector);
-  </script> </div> <div class="content"> <a href="/en/pictures/2025-01-15_mars/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1F2ipZY3y65EK3lI-1e8sGdZRHQZGgBOQ"> </a><a href="/en/pictures/2025-01-12_mars_gif/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1TjRiLhf0_DgifVTv0x62wWakILMay-6P"> </a><a href="/en/pictures/2025-01-01_mars_21h52/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=15Ezdl52UX7Sh5MxslbYZr_Ql_LSp0UdM"> </a><a href="/en/pictures/2022-12-08_mars_occultation_by_moon/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1LceSlbIbIZw4P_iMTo8Llo1RgZAFwVDR"> </a><a href="/en/pictures/2022-12-07_mars_opposition/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=13CTnjve1g1KFtks6ydqqyDHRLUECdgyU"> </a><a href="/en/pictures/2022-12-07_mars_opposition_legende/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1ORBOXGAKv5OXi1RFxZn47hkt0jqFMqo5"> </a><a href="/en/pictures/2022-11-11_mars-copy/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1IdEVVCKSpFUgNVrPZvl1HY_Sxf9AtZ_U"> </a><a href="/en/pictures/2022-11-11_mars/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id="> </a><a href="/en/pictures/2022-10-04_mars/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1QNBo-bJuh21XF8INSNTfgws_7RgeiwsF"> </a><a href="/en/pictures/2022-09-12_mars_1/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1SGc3RNk5c-pLQlCTWPH2T_P710TSMDwX"> </a><a href="/en/pictures/2022-09-12_mars_2/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=13uWB2HUD3PlLFtguw9MhU7pbIjnR9N38"> </a><a href="/en/pictures/2022-09-12_mars_animation/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1j5axhGmuOAku_tbqcp2ds5Pe-au9JRyt"> </a><a href="/en/pictures/2022-08-03_mars_color/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1tZc5eJo8BieWqUyjNgI7ghqVMsqI8PRN"> </a><a href="/en/pictures/2022-08-03_mars_monochrome/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1waqVOGLXE58tW9UCOp3hBqda-sSmcIEW"> </a><a href="/en/pictures/2020-10-06_mars_monochrome/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1djfpK5OvPtXzGjTY7rqQIWM4B3Q-BL12"> </a><a href="/en/pictures/2020-10-06_mars_rotation/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1MDwicxXcVmjCRilXNHxyGdVzNJLqGUUz"> </a><a href="/en/pictures/2020-10-05_mars_rgb/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=11puqnr2KGrLT5NWQym7ZzFS10VXBupzy"> </a><a href="/en/pictures/2020-07-11_mars/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1NLoyR0SOY54vSN-Vg-NiTCRigSzVSkF4"> </a><a href="/en/pictures/2018-07-28_mars/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1Ow4Q-jnrvtktbvfVpnSBpuCJY3hSa87w"> </a><a href="/en/pictures/2016-07-29_mars_2x_2/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1usmqsWUCP9RsR6w1MBRrdQH-9SKX4yHi"> </a><a href="/en/pictures/2016-07-15_mars/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1nWKH6f0Jug-fVQf3bxHmpVji8Ui2KVwa"> </a><a href="/en/pictures/2016-07-14_mars/"> <img class="thumbnail" src="https://drive.google.com/thumbnail?sz=h300&id=1R9whyU75TcliCi-NfbYTlc2uwLxF8EsZ"> </a> </div> </body></html>
+            document
+              .getElementById("language-selector")
+              .addEventListener("change", function () {
+                var selectedOption = this.options[this.selectedIndex];
+                if (selectedOption.value === "fr") {
+                  window.location.href = newFrUrl;
+                } else if (selectedOption.value === "en") {
+                  window.location.href = newEnUrl;
+                }
+              });
+            console.log("after");
+          }
+        }
+
+        customElements.define("langage-selector", LangageSelector);
+      </script>
+    </div>
+    <div class="content">
+      <a href="/en/pictures/2025-01-15_mars/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1F2ipZY3y65EK3lI-1e8sGdZRHQZGgBOQ"
+        /> </a
+      ><a href="/en/pictures/2025-01-12_mars_gif/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1TjRiLhf0_DgifVTv0x62wWakILMay-6P"
+        /> </a
+      ><a href="/en/pictures/2025-01-01_mars_21h52/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=15Ezdl52UX7Sh5MxslbYZr_Ql_LSp0UdM"
+        /> </a
+      ><a href="/en/pictures/2022-12-08_mars_occultation_by_moon/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1LceSlbIbIZw4P_iMTo8Llo1RgZAFwVDR"
+        /> </a
+      ><a href="/en/pictures/2022-12-07_mars_opposition/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=13CTnjve1g1KFtks6ydqqyDHRLUECdgyU"
+        /> </a
+      ><a href="/en/pictures/2022-12-07_mars_opposition_legende/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1ORBOXGAKv5OXi1RFxZn47hkt0jqFMqo5"
+        /> </a
+      ><a href="/en/pictures/2022-11-11_mars-copy/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1IdEVVCKSpFUgNVrPZvl1HY_Sxf9AtZ_U"
+        /> </a
+      ><a href="/en/pictures/2022-11-11_mars/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id="
+        /> </a
+      ><a href="/en/pictures/2022-10-04_mars/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1QNBo-bJuh21XF8INSNTfgws_7RgeiwsF"
+        /> </a
+      ><a href="/en/pictures/2022-09-12_mars_1/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1SGc3RNk5c-pLQlCTWPH2T_P710TSMDwX"
+        /> </a
+      ><a href="/en/pictures/2022-09-12_mars_2/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=13uWB2HUD3PlLFtguw9MhU7pbIjnR9N38"
+        /> </a
+      ><a href="/en/pictures/2022-09-12_mars_animation/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1j5axhGmuOAku_tbqcp2ds5Pe-au9JRyt"
+        /> </a
+      ><a href="/en/pictures/2022-08-03_mars_color/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1tZc5eJo8BieWqUyjNgI7ghqVMsqI8PRN"
+        /> </a
+      ><a href="/en/pictures/2022-08-03_mars_monochrome/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1waqVOGLXE58tW9UCOp3hBqda-sSmcIEW"
+        /> </a
+      ><a href="/en/pictures/2020-10-06_mars_monochrome/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1djfpK5OvPtXzGjTY7rqQIWM4B3Q-BL12"
+        /> </a
+      ><a href="/en/pictures/2020-10-06_mars_rotation/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1MDwicxXcVmjCRilXNHxyGdVzNJLqGUUz"
+        /> </a
+      ><a href="/en/pictures/2020-10-05_mars_rgb/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=11puqnr2KGrLT5NWQym7ZzFS10VXBupzy"
+        /> </a
+      ><a href="/en/pictures/2020-07-11_mars/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1NLoyR0SOY54vSN-Vg-NiTCRigSzVSkF4"
+        /> </a
+      ><a href="/en/pictures/2018-07-28_mars/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1Ow4Q-jnrvtktbvfVpnSBpuCJY3hSa87w"
+        /> </a
+      ><a href="/en/pictures/2016-07-29_mars_2x_2/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1usmqsWUCP9RsR6w1MBRrdQH-9SKX4yHi"
+        /> </a
+      ><a href="/en/pictures/2016-07-15_mars/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1nWKH6f0Jug-fVQf3bxHmpVji8Ui2KVwa"
+        /> </a
+      ><a href="/en/pictures/2016-07-14_mars/">
+        <img
+          class="thumbnail"
+          src="https://drive.google.com/thumbnail?sz=h300&id=1R9whyU75TcliCi-NfbYTlc2uwLxF8EsZ"
+        />
+      </a>
+    </div>
+  </body>
+</html>
