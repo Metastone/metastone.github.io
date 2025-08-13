@@ -97,6 +97,13 @@
       padding: 5px;
     }
   </style>
+  <script type="module">
+    document
+      .getElementById("return-button")
+      .addEventListener("click", function () {
+        window.history.back();
+      });
+  </script>
   <body>
     <div class="banner">
       <div class="banner-titles">
@@ -109,8 +116,8 @@
         <option value="fr">Français</option>
       </select>
       <langage-selector
-        data-newenurl="/en/tags/ngc7380/"
-        data-newfrurl="/fr/tags/ngc7380/"
+        data-newenurl="/en/pictures/2025-08-11_nebuleuse_du_sorcier_ngc7380/"
+        data-newfrurl="/fr/pictures/2025-08-11_nebuleuse_du_sorcier_ngc7380/"
       ></langage-selector>
       <script type="module">
         class LangageSelector extends HTMLElement {
@@ -137,17 +144,44 @@
       </script>
     </div>
     <div class="content">
-      <a href="/en/pictures/2025-08-11_nebuleuse_du_sorcier_ngc7380/">
-        <img
-          class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1obaRuTMLVQYy115M6_T55iUTrxqkLI1S"
-        /> </a
-      ><a href="/en/pictures/2024-08-12_ngc7380_nebuleuse_du_sorcier/">
-        <img
-          class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1p16l92ZBKBsXN1lhQy1uO2II852xSpmw"
-        />
+      <button class="custom-button" id="return-button">Return</button>
+      <a
+        href="https://lh3.googleusercontent.com/d/1obaRuTMLVQYy115M6_T55iUTrxqkLI1S"
+      >
+        <button class="custom-button" id="full-size-button">Full size</button>
       </a>
+      <div class="image-container">
+        <img
+          crossorigin="anonymous"
+          class="fullSizeImage"
+          src="https://lh3.googleusercontent.com/d/1obaRuTMLVQYy115M6_T55iUTrxqkLI1S"
+        />
+      </div>
+      <table class="borderless-table">
+        <tr>
+          <td>Acquisition date</td>
+          <td id="acquisition-date">Aug 11, 2025</td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td id="description">
+            Wizard nebula (NGC-7380). Color camera ZWO ASI183MC. 60x300s
+            exposures (5h). Captured in Chaynat, Auvergne region, France. No
+            clouds, but the moon was almost full
+          </td>
+        </tr>
+        <tr>
+          <td>Tags</td>
+          <td>
+            <a href="/en/tags/deep-sky/">deep-sky</a>
+            &nbsp;
+            <a href="/en/tags/nebula/">nebula</a>
+            &nbsp;
+            <a href="/en/tags/ngc7380/">ngc7380</a>
+            &nbsp;
+          </td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
