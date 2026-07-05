@@ -3,25 +3,25 @@
   <style>
     :root {
       --primary-color: #3e8eae;
-      --secondary-color: #ffcc00;
+      --secondary-color: #fc0;
       --text-color: #fff;
-      --background-color: rgb(20, 20, 30);
-      --banner-background-color: rgb(40, 40, 50);
+      --background-color: #14141e;
+      --banner-background-color: #282832;
     }
     .banner {
+      background-color: var(--banner-background-color);
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 60px;
+      display: flex;
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 60px;
-      background-color: var(--banner-background-color);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
     .banner-titles {
-      flex-grow: 1;
       text-align: center;
+      flex-grow: 1;
     }
     .banner-title {
       color: orange;
@@ -32,15 +32,13 @@
       margin-top: 5px;
     }
     .language-selector {
-      margin-right: 10px;
       appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
       background-color: var(--banner-background-color);
       color: #fff;
-      padding: 10px;
       border: 1px solid #555;
       border-radius: 5px;
+      margin-right: 10px;
+      padding: 10px;
     }
     .content {
       margin-top: 70px;
@@ -53,16 +51,16 @@
       cursor: pointer;
     }
     .custom-button {
-      background-color: #333;
       color: #eee;
+      cursor: pointer;
+      background-color: #333;
       border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      margin-right: 10px;
       padding: 10px 20px;
       font-size: 14px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-right: 10px;
-      margin-bottom: 10px;
+      transition: background-color 0.3s;
     }
     .custom-button:hover {
       background-color: #555;
@@ -72,22 +70,22 @@
       text-decoration: none;
     }
     .image-container {
+      justify-content: center;
+      align-items: center;
       max-width: 100%;
       height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
     }
     .image-container img {
       max-width: 90%;
       max-height: 100%;
     }
     .close-button {
+      cursor: pointer;
+      color: #fff;
       position: absolute;
       top: 10px;
       right: 10px;
-      cursor: pointer;
-      color: #fff;
     }
     .borderless-table {
       border-collapse: collapse;
@@ -105,119 +103,98 @@
         </h2>
       </div>
       <select class="language-selector" id="language-selector">
-        <option value="en" selected="selected">English</option>
-        <option value="fr">Français</option>
-      </select>
-      <langage-selector
+        <option value="en" selected>English</option>
+        <option value="fr">Français</option></select
+      ><langage-selector
         data-newenurl="/en/tags/2016/"
         data-newfrurl="/fr/tags/2016/"
       ></langage-selector>
       <script type="module">
-        class LangageSelector extends HTMLElement {
+        var e = class extends HTMLElement {
           constructor() {
             super();
-            const newFrUrl = this.dataset.newfrurl;
-            const newEnUrl = this.dataset.newenurl;
-
+            let e = this.dataset.newfrurl,
+              t = this.dataset.newenurl;
             document
-              .getElementById("language-selector")
-              .addEventListener("change", function () {
-                var selectedOption = this.options[this.selectedIndex];
-                if (selectedOption.value === "fr") {
-                  window.location.href = newFrUrl;
-                } else if (selectedOption.value === "en") {
-                  window.location.href = newEnUrl;
-                }
-              });
-            console.log("after");
+              .getElementById(`language-selector`)
+              .addEventListener(`change`, function () {
+                var n = this.options[this.selectedIndex];
+                n.value === `fr`
+                  ? (window.location.href = e)
+                  : n.value === `en` && (window.location.href = t);
+              }),
+              console.log(`after`);
           }
-        }
-
-        customElements.define("langage-selector", LangageSelector);
+        };
+        customElements.define(`langage-selector`, e);
       </script>
     </div>
     <div class="content">
-      <a href="/en/pictures/2016-12-22_jupiter_1/">
-        <img
+      <a href="/en/pictures/2016-12-22_jupiter_1/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1-dsFjzZbs0hltc_HwTfVNyA-juu8dET0"
-        /> </a
-      ><a href="/en/pictures/2016-12-22_jupiter_2/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1-dsFjzZbs0hltc_HwTfVNyA-juu8dET0" /></a
+      ><a href="/en/pictures/2016-12-22_jupiter_2/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=10BdvMbWusu45O-eeZ1rakdkJjL9uQJNI"
-        /> </a
-      ><a href="/en/pictures/2016-09-09_lune_1x/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=10BdvMbWusu45O-eeZ1rakdkJjL9uQJNI" /></a
+      ><a href="/en/pictures/2016-09-09_lune_1x/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1x1qnjWSDm_l63LnWNcX8U7l5e3l4Yl0y"
-        /> </a
-      ><a href="/en/pictures/2016-09-09_lune_2x/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1x1qnjWSDm_l63LnWNcX8U7l5e3l4Yl0y" /></a
+      ><a href="/en/pictures/2016-09-09_lune_2x/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1H6tESYdF6Ekx-TaIEPQeti3ri0Y7QY44"
-        /> </a
-      ><a href="/en/pictures/2016-09-09_lune_2x_2/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1H6tESYdF6Ekx-TaIEPQeti3ri0Y7QY44" /></a
+      ><a href="/en/pictures/2016-09-09_lune_2x_2/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=126VRTAQc0_NjYCRT6z71BO_qzQCasxgT"
-        /> </a
-      ><a href="/en/pictures/2016-09-06_lune_1x/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=126VRTAQc0_NjYCRT6z71BO_qzQCasxgT" /></a
+      ><a href="/en/pictures/2016-09-06_lune_1x/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1XPJUkVhJNXcJaODMrisHSdJrj-zMBgP5"
-        /> </a
-      ><a href="/en/pictures/2016-09-06_lune_2x/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1XPJUkVhJNXcJaODMrisHSdJrj-zMBgP5" /></a
+      ><a href="/en/pictures/2016-09-06_lune_2x/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1xKiEfkxaJ7CSfviVCUVsW7o3yww_zNmd"
-        /> </a
-      ><a href="/en/pictures/2016-08-23_saturne_1/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1xKiEfkxaJ7CSfviVCUVsW7o3yww_zNmd" /></a
+      ><a href="/en/pictures/2016-08-23_saturne_1/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1aeeZuE0LzCR4OOF10eiXF5kZatEmlXCS"
-        /> </a
-      ><a href="/en/pictures/2016-08-23_saturne_2/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1aeeZuE0LzCR4OOF10eiXF5kZatEmlXCS" /></a
+      ><a href="/en/pictures/2016-08-23_saturne_2/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1urf0DBK_kggBtEHbCofT-X4U5K7HSpCQ"
-        /> </a
-      ><a href="/en/pictures/2016-07-29_mars_2x_2/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1urf0DBK_kggBtEHbCofT-X4U5K7HSpCQ" /></a
+      ><a href="/en/pictures/2016-07-29_mars_2x_2/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1usmqsWUCP9RsR6w1MBRrdQH-9SKX4yHi"
-        /> </a
-      ><a href="/en/pictures/2016-07-26_saturne/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1usmqsWUCP9RsR6w1MBRrdQH-9SKX4yHi" /></a
+      ><a href="/en/pictures/2016-07-26_saturne/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1TKPdQOp4im8DZ4c2uhcgVS3jD5XIxw7y"
-        /> </a
-      ><a href="/en/pictures/2016-07-26_saturne_color_adjusted/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1TKPdQOp4im8DZ4c2uhcgVS3jD5XIxw7y" /></a
+      ><a href="/en/pictures/2016-07-26_saturne_color_adjusted/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1l736Rj_4zjUeGOaQfCfyP8IXIv3s0hJn"
-        /> </a
-      ><a href="/en/pictures/2016-07-15_jupiter/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1l736Rj_4zjUeGOaQfCfyP8IXIv3s0hJn" /></a
+      ><a href="/en/pictures/2016-07-15_jupiter/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1Ed2MK9opr4LJZkFU0WGYxKOp1GuT78s-"
-        /> </a
-      ><a href="/en/pictures/2016-07-15_mars/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1Ed2MK9opr4LJZkFU0WGYxKOp1GuT78s-" /></a
+      ><a href="/en/pictures/2016-07-15_mars/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1nWKH6f0Jug-fVQf3bxHmpVji8Ui2KVwa"
-        /> </a
-      ><a href="/en/pictures/2016-07-14_mars/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1nWKH6f0Jug-fVQf3bxHmpVji8Ui2KVwa" /></a
+      ><a href="/en/pictures/2016-07-14_mars/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1R9whyU75TcliCi-NfbYTlc2uwLxF8EsZ"
-        /> </a
-      ><a href="/en/pictures/2016-07-13_saturne/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1R9whyU75TcliCi-NfbYTlc2uwLxF8EsZ" /></a
+      ><a href="/en/pictures/2016-07-13_saturne/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1CzSySq6lzl_LQu7-gZEHYi3T-OFkC5R-"
-        />
-      </a>
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1CzSySq6lzl_LQu7-gZEHYi3T-OFkC5R-"
+      /></a>
     </div>
   </body>
 </html>

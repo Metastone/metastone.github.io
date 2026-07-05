@@ -3,25 +3,25 @@
   <style>
     :root {
       --primary-color: #3e8eae;
-      --secondary-color: #ffcc00;
+      --secondary-color: #fc0;
       --text-color: #fff;
-      --background-color: rgb(20, 20, 30);
-      --banner-background-color: rgb(40, 40, 50);
+      --background-color: #14141e;
+      --banner-background-color: #282832;
     }
     .banner {
+      background-color: var(--banner-background-color);
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 60px;
+      display: flex;
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 60px;
-      background-color: var(--banner-background-color);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
     .banner-titles {
-      flex-grow: 1;
       text-align: center;
+      flex-grow: 1;
     }
     .banner-title {
       color: orange;
@@ -32,15 +32,13 @@
       margin-top: 5px;
     }
     .language-selector {
-      margin-right: 10px;
       appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
       background-color: var(--banner-background-color);
       color: #fff;
-      padding: 10px;
       border: 1px solid #555;
       border-radius: 5px;
+      margin-right: 10px;
+      padding: 10px;
     }
     .content {
       margin-top: 70px;
@@ -53,16 +51,16 @@
       cursor: pointer;
     }
     .custom-button {
-      background-color: #333;
       color: #eee;
+      cursor: pointer;
+      background-color: #333;
       border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      margin-right: 10px;
       padding: 10px 20px;
       font-size: 14px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-right: 10px;
-      margin-bottom: 10px;
+      transition: background-color 0.3s;
     }
     .custom-button:hover {
       background-color: #555;
@@ -72,22 +70,22 @@
       text-decoration: none;
     }
     .image-container {
+      justify-content: center;
+      align-items: center;
       max-width: 100%;
       height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
     }
     .image-container img {
       max-width: 90%;
       max-height: 100%;
     }
     .close-button {
+      cursor: pointer;
+      color: #fff;
       position: absolute;
       top: 10px;
       right: 10px;
-      cursor: pointer;
-      color: #fff;
     }
     .borderless-table {
       border-collapse: collapse;
@@ -106,115 +104,94 @@
       </div>
       <select class="language-selector" id="language-selector">
         <option value="en">English</option>
-        <option value="fr" selected="selected">Français</option>
-      </select>
-      <langage-selector
+        <option value="fr" selected>Français</option></select
+      ><langage-selector
         data-newenurl="/en/tags/nebula/"
         data-newfrurl="/fr/tags/nebula/"
       ></langage-selector>
       <script type="module">
-        class LangageSelector extends HTMLElement {
+        var e = class extends HTMLElement {
           constructor() {
             super();
-            const newFrUrl = this.dataset.newfrurl;
-            const newEnUrl = this.dataset.newenurl;
-
+            let e = this.dataset.newfrurl,
+              t = this.dataset.newenurl;
             document
-              .getElementById("language-selector")
-              .addEventListener("change", function () {
-                var selectedOption = this.options[this.selectedIndex];
-                if (selectedOption.value === "fr") {
-                  window.location.href = newFrUrl;
-                } else if (selectedOption.value === "en") {
-                  window.location.href = newEnUrl;
-                }
-              });
-            console.log("after");
+              .getElementById(`language-selector`)
+              .addEventListener(`change`, function () {
+                var n = this.options[this.selectedIndex];
+                n.value === `fr`
+                  ? (window.location.href = e)
+                  : n.value === `en` && (window.location.href = t);
+              }),
+              console.log(`after`);
           }
-        }
-
-        customElements.define("langage-selector", LangageSelector);
+        };
+        customElements.define(`langage-selector`, e);
       </script>
     </div>
     <div class="content">
-      <a href="/fr/pictures/2025-08-11_nebuleuse_du_sorcier_ngc7380/">
-        <img
+      <a href="/fr/pictures/2025-08-11_nebuleuse_du_sorcier_ngc7380/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1obaRuTMLVQYy115M6_T55iUTrxqkLI1S"
-        /> </a
-      ><a href="/fr/pictures/2025-08-08_ngc6888_nebuleuse_du_croissant/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1obaRuTMLVQYy115M6_T55iUTrxqkLI1S" /></a
+      ><a href="/fr/pictures/2025-08-08_ngc6888_nebuleuse_du_croissant/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1ZoZD1z0IRkVCndSRaiZ5QLCR1NL3IBws"
-        /> </a
-      ><a href="/fr/pictures/2025-08-05_ic5146_nebuleuse_du_cocon/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1ZoZD1z0IRkVCndSRaiZ5QLCR1NL3IBws" /></a
+      ><a href="/fr/pictures/2025-08-05_ic5146_nebuleuse_du_cocon/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=15ntDcw0fNUlB_jlbsamqh3gJEvYz9uST"
-        /> </a
-      ><a href="/fr/pictures/2024-08-12_ngc7380_nebuleuse_du_sorcier/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=15ntDcw0fNUlB_jlbsamqh3gJEvYz9uST" /></a
+      ><a href="/fr/pictures/2024-08-12_ngc7380_nebuleuse_du_sorcier/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1p16l92ZBKBsXN1lhQy1uO2II852xSpmw"
-        /> </a
-      ><a href="/fr/pictures/2023-10-13_ngc14999_nebuleuse_californie/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1p16l92ZBKBsXN1lhQy1uO2II852xSpmw" /></a
+      ><a href="/fr/pictures/2023-10-13_ngc14999_nebuleuse_californie/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1Q4XbIQWFisszqU5zQJSUOW1IWE0xU9E2"
-        /> </a
-      ><a href="/fr/pictures/2023-09-14_m45_amas_des_pleiades_small/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1Q4XbIQWFisszqU5zQJSUOW1IWE0xU9E2" /></a
+      ><a href="/fr/pictures/2023-09-14_m45_amas_des_pleiades_small/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1-x_a7W-7xwH4jevGhWv0Jwek7sMswDOa"
-        /> </a
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1-x_a7W-7xwH4jevGhWv0Jwek7sMswDOa" /></a
       ><a
         href="/fr/pictures/2023-08-10_ngc7000_nebuleuse_north_america_red_small/"
-      >
-        <img
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1GUWC_pir5G_o0Ie1y2H-yF0gn8ccp3jS"
-        /> </a
-      ><a href="/fr/pictures/2023-08-03_c33_dentelle_du_cygne_dur_small/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1GUWC_pir5G_o0Ie1y2H-yF0gn8ccp3jS" /></a
+      ><a href="/fr/pictures/2023-08-03_c33_dentelle_du_cygne_dur_small/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1zE2LMM-0K2azjCVDq5SIJqKMIIrhuSSH"
-        /> </a
-      ><a href="/fr/pictures/2022-11-29_nebuleuse_eskimo/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1zE2LMM-0K2azjCVDq5SIJqKMIIrhuSSH" /></a
+      ><a href="/fr/pictures/2022-11-29_nebuleuse_eskimo/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1kS4-w0XcHKREjYwwTBd6HG3gpL38ed5g"
-        /> </a
-      ><a href="/fr/pictures/2022-11-29_nebuleuse_orion/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1kS4-w0XcHKREjYwwTBd6HG3gpL38ed5g" /></a
+      ><a href="/fr/pictures/2022-11-29_nebuleuse_orion/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1bU627IQ8yG09L9fPFnY0dNsWAAKC7s5_"
-        /> </a
-      ><a href="/fr/pictures/2021-03-16_nebuleuse_de_la_lyre/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1bU627IQ8yG09L9fPFnY0dNsWAAKC7s5_" /></a
+      ><a href="/fr/pictures/2021-03-16_nebuleuse_de_la_lyre/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=13yKgB0nocN0Fy4KAcKNiBTZUqHMhN6WW"
-        /> </a
-      ><a href="/fr/pictures/2021-03-13_oeil_de_char_couleur/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=13yKgB0nocN0Fy4KAcKNiBTZUqHMhN6WW" /></a
+      ><a href="/fr/pictures/2021-03-13_oeil_de_char_couleur/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1nlKAGi1blqZQwWUpJECZudeyZyr1pBMi"
-        /> </a
-      ><a href="/fr/pictures/2021-02-08_orion/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1nlKAGi1blqZQwWUpJECZudeyZyr1pBMi" /></a
+      ><a href="/fr/pictures/2021-02-08_orion/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1vbQGEDShbKddcM0ASepkGgc8lXHyZj_R"
-        /> </a
-      ><a href="/fr/pictures/2020-12-27_orion_rgb/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1vbQGEDShbKddcM0ASepkGgc8lXHyZj_R" /></a
+      ><a href="/fr/pictures/2020-12-27_orion_rgb/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1Uw1ZJbzeXi6OVYNNsJ2yfTocYIUBxwxL"
-        /> </a
-      ><a href="/fr/pictures/2020-10-05_orion_equalized/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1Uw1ZJbzeXi6OVYNNsJ2yfTocYIUBxwxL" /></a
+      ><a href="/fr/pictures/2020-10-05_orion_equalized/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1x2oFypKSIknuUKcSXQ3nr5TObsTNm_yd"
-        />
-      </a>
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1x2oFypKSIknuUKcSXQ3nr5TObsTNm_yd"
+      /></a>
     </div>
   </body>
 </html>

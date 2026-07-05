@@ -3,25 +3,25 @@
   <style>
     :root {
       --primary-color: #3e8eae;
-      --secondary-color: #ffcc00;
+      --secondary-color: #fc0;
       --text-color: #fff;
-      --background-color: rgb(20, 20, 30);
-      --banner-background-color: rgb(40, 40, 50);
+      --background-color: #14141e;
+      --banner-background-color: #282832;
     }
     .banner {
+      background-color: var(--banner-background-color);
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 60px;
+      display: flex;
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 60px;
-      background-color: var(--banner-background-color);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
     .banner-titles {
-      flex-grow: 1;
       text-align: center;
+      flex-grow: 1;
     }
     .banner-title {
       color: orange;
@@ -32,15 +32,13 @@
       margin-top: 5px;
     }
     .language-selector {
-      margin-right: 10px;
       appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
       background-color: var(--banner-background-color);
       color: #fff;
-      padding: 10px;
       border: 1px solid #555;
       border-radius: 5px;
+      margin-right: 10px;
+      padding: 10px;
     }
     .content {
       margin-top: 70px;
@@ -53,16 +51,16 @@
       cursor: pointer;
     }
     .custom-button {
-      background-color: #333;
       color: #eee;
+      cursor: pointer;
+      background-color: #333;
       border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      margin-right: 10px;
       padding: 10px 20px;
       font-size: 14px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-right: 10px;
-      margin-bottom: 10px;
+      transition: background-color 0.3s;
     }
     .custom-button:hover {
       background-color: #555;
@@ -72,22 +70,22 @@
       text-decoration: none;
     }
     .image-container {
+      justify-content: center;
+      align-items: center;
       max-width: 100%;
       height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
     }
     .image-container img {
       max-width: 90%;
       max-height: 100%;
     }
     .close-button {
+      cursor: pointer;
+      color: #fff;
       position: absolute;
       top: 10px;
       right: 10px;
-      cursor: pointer;
-      color: #fff;
     }
     .borderless-table {
       border-collapse: collapse;
@@ -106,68 +104,57 @@
       </div>
       <select class="language-selector" id="language-selector">
         <option value="en">English</option>
-        <option value="fr" selected="selected">Français</option>
-      </select>
-      <langage-selector
+        <option value="fr" selected>Français</option></select
+      ><langage-selector
         data-newenurl="/en/tags/2025/"
         data-newfrurl="/fr/tags/2025/"
       ></langage-selector>
       <script type="module">
-        class LangageSelector extends HTMLElement {
+        var e = class extends HTMLElement {
           constructor() {
             super();
-            const newFrUrl = this.dataset.newfrurl;
-            const newEnUrl = this.dataset.newenurl;
-
+            let e = this.dataset.newfrurl,
+              t = this.dataset.newenurl;
             document
-              .getElementById("language-selector")
-              .addEventListener("change", function () {
-                var selectedOption = this.options[this.selectedIndex];
-                if (selectedOption.value === "fr") {
-                  window.location.href = newFrUrl;
-                } else if (selectedOption.value === "en") {
-                  window.location.href = newEnUrl;
-                }
-              });
-            console.log("after");
+              .getElementById(`language-selector`)
+              .addEventListener(`change`, function () {
+                var n = this.options[this.selectedIndex];
+                n.value === `fr`
+                  ? (window.location.href = e)
+                  : n.value === `en` && (window.location.href = t);
+              }),
+              console.log(`after`);
           }
-        }
-
-        customElements.define("langage-selector", LangageSelector);
+        };
+        customElements.define(`langage-selector`, e);
       </script>
     </div>
     <div class="content">
-      <a href="/fr/pictures/2025-08-11_nebuleuse_du_sorcier_ngc7380/">
-        <img
+      <a href="/fr/pictures/2025-08-11_nebuleuse_du_sorcier_ngc7380/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1obaRuTMLVQYy115M6_T55iUTrxqkLI1S"
-        /> </a
-      ><a href="/fr/pictures/2025-08-08_ngc6888_nebuleuse_du_croissant/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1obaRuTMLVQYy115M6_T55iUTrxqkLI1S" /></a
+      ><a href="/fr/pictures/2025-08-08_ngc6888_nebuleuse_du_croissant/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1ZoZD1z0IRkVCndSRaiZ5QLCR1NL3IBws"
-        /> </a
-      ><a href="/fr/pictures/2025-08-05_ic5146_nebuleuse_du_cocon/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1ZoZD1z0IRkVCndSRaiZ5QLCR1NL3IBws" /></a
+      ><a href="/fr/pictures/2025-08-05_ic5146_nebuleuse_du_cocon/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=15ntDcw0fNUlB_jlbsamqh3gJEvYz9uST"
-        /> </a
-      ><a href="/fr/pictures/2025-01-15_mars/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=15ntDcw0fNUlB_jlbsamqh3gJEvYz9uST" /></a
+      ><a href="/fr/pictures/2025-01-15_mars/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1F2ipZY3y65EK3lI-1e8sGdZRHQZGgBOQ"
-        /> </a
-      ><a href="/fr/pictures/2025-01-12_mars_gif/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1F2ipZY3y65EK3lI-1e8sGdZRHQZGgBOQ" /></a
+      ><a href="/fr/pictures/2025-01-12_mars_gif/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=1TjRiLhf0_DgifVTv0x62wWakILMay-6P"
-        /> </a
-      ><a href="/fr/pictures/2025-01-01_mars_21h52/">
-        <img
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=1TjRiLhf0_DgifVTv0x62wWakILMay-6P" /></a
+      ><a href="/fr/pictures/2025-01-01_mars_21h52/"
+        ><img
           class="thumbnail"
-          src="https://drive.google.com/thumbnail?sz=h300&id=15Ezdl52UX7Sh5MxslbYZr_Ql_LSp0UdM"
-        />
-      </a>
+          src="https://drive.google.com/thumbnail?sz=h300&amp;id=15Ezdl52UX7Sh5MxslbYZr_Ql_LSp0UdM"
+      /></a>
     </div>
   </body>
 </html>
